@@ -3,13 +3,13 @@ A Marionette Behavior that allows you to add hotkey functionality to any view.
 
 ## Usage:
 
-```
+```shell
 npm install --save behave-ui-hotkeys
 ```
 
 Then just require and use as you would any other behavior:
 
-```
+```js
 var Hotkeys = require('behave-ui-hotkeys'),
     _ = require('underscore');
 
@@ -41,7 +41,7 @@ NOTES:
  - If you specify a view method that does not exist, it will just call event
  - If you do not want to call a view method pass an empty string as the value, i.e.
 
-```
+```js
 hotkeys: {
     'ctrl:alt:o': 'open', // will fire event: 'hotkey:ctrl:alt:o', will call: this.view.open()
     'ctrl:alt:p': '' // will only fire event: 'hotkey:ctrl:alt:p', will not call any method
