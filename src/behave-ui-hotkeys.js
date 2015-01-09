@@ -20,6 +20,11 @@ Hotkeys = Marionette.Behavior.extend({
             throw new Error(errorMessage);
         }
 
+        // make non-focusable elements focusable
+        this.view.$el
+            .attr('tabindex', 0)
+            .css('outline', '0px solid transparent');
+
         this.hotkeys = [];
         _(this.options.hotkeys).each(this._buildHotkeyCache.bind(this));
     },

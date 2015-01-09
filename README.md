@@ -130,3 +130,4 @@ To run tests run either `npm test` or `grunt test`, former is an alias for the l
 
 - 0.0.1 - Initial Release
 - 0.0.2 - Syntax highlighting added to readme
+- 0.0.3 - Add focus functionality to non-focusable elements
