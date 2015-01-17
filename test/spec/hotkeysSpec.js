@@ -36,6 +36,13 @@ describe('Hotkeys Behavior', function() {
         expect(_.isObject(behavior.options.hotkeys)).toBeTruthy();
     });
 
+    it('has a `attachToDocument` property that determines whether or not the event should be attached to the view or the document',
+            function() {
+
+        expect(behavior.options.attachToDocument).toBeDefined();
+        expect(_.isObject(behavior.options.attachToDocument)).toBeFalsy();
+    });
+
     it('has a `_buildHotkeyCache` method that is called on initialize',
             function() {
 

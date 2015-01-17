@@ -1,16 +1,24 @@
+/* global document */
+
 'use strict';
 
 var Marionette = require('backbone.marionette'),
+    $ = require('jquery'),
     _ = require('underscore'),
     lookup = require('./lib/hotkey-lookup'),
     Hotkeys;
 
 Hotkeys = Marionette.Behavior.extend({
     defaults: {
-        hotkeys: {}
+        hotkeys: {},
+        attachToDocument: false
     },
-    events: {
-        'keypress': '_processHotkeys',
+    events: function() {
+        var events = {};
+        if (!this.options.attachToDocument) {
+            events = { 'keypress': '_processHotkeys' };
+        }
+        return events;
     },
     initialize: function() {
         var errorMessage;
@@ -20,13 +28,20 @@ Hotkeys = Marionette.Behavior.extend({
             throw new Error(errorMessage);
         }
 
-        // make non-focusable elements focusable
-        this.view.$el
-            .attr('tabindex', 0)
-            .css('outline', '0px solid transparent');
-
         this.hotkeys = [];
         _(this.options.hotkeys).each(this._buildHotkeyCache.bind(this));
+    },
+    onAttach: function() {
+        if (this.options.attachToDocument) {
+            $(document).on('keypress', this._processHotkeys.bind(this));
+        }
+
+        // make non-focusable elements focusable
+        if (!/(input|textarea)/.test(this.view.el.tag.toLowerCase())) {
+            this.view.$el
+                .attr('tabindex', 0)
+                .css('outline', '0px solid transparent');
+        }
     },
     _processHotkeys: function(e) {
         var data = {
@@ -88,6 +103,11 @@ Hotkeys = Marionette.Behavior.extend({
             alt: alt,
             shift: shift
         });
+    },
+    onBeforeDestroy: function() {
+        if (this.options.attachToDocument) {
+            $(document).off('keypress', this._processHotkeys.bind(this));
+        }
     }
 });
 

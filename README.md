@@ -20,7 +20,8 @@ var View = Marionette.ItemView.extend({
             behaviorClass: Hotkeys,
             hotkeys: {
                'cmd:alt:y': 'viewMethod'
-            }
+            },
+            attachToDocument: false
         }
     },
     initialize: function() {
@@ -40,6 +41,8 @@ NOTES:
  - Codes are case insensitive, F1 will become f1, DELETE will become delete, etc...
  - If you specify a view method that does not exist, it will just call event
  - If you do not want to call a view method pass an empty string as the value, i.e.
+ - If element type is not a focusable element, div, p, etc behavior adds tabindex attr to element
+ - If you set `attachToDocument` to true, then behavior adds listener to document instead of root view
 
 ```js
 hotkeys: {
@@ -131,3 +134,5 @@ To run tests run either `npm test` or `grunt test`, former is an alias for the l
 - 0.0.1 - Initial Release
 - 0.0.2 - Syntax highlighting added to readme
 - 0.0.3 - Add focus functionality to non-focusable elements
+- 0.0.4 - Clean up readme, cleaned up code
+- 0.0.5 - Added `attachToDocument` functionality
