@@ -3,3 +3,4 @@ node_modules
 _SpecRunner.html
 test/build
 *.DS_Store
+bower_components

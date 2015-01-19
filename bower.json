@@ -1,0 +1,32 @@
+{
+  "name": "behave-ui-hotkeys",
+  "main": "behave-ui-hotkeys.js",
+  "version": "0.0.6",
+  "homepage": "https://github.com/behave-ui/behave-ui-hotkeys",
+  "authors": [
+    "Kurtis Kemple <kurtiskemple@gmail.com>"
+  ],
+  "description": "A Marionette Behavior to provide hotkey functionality for Views",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "marionette",
+    "behavior",
+    "hotkeys",
+    "backbone"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marionette": ">= 2.x"
+  }
+}

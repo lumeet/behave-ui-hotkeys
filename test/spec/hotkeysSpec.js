@@ -1,7 +1,7 @@
 var Marionette = require('backbone.marionette'),
     Backbone = require('backbone'),
     _ = require('underscore'),
-    Hotkeys = require('../../src/behave-ui-hotkeys'),
+    Hotkeys = require('../../behave-ui-hotkeys'),
     View;
 
 View = Marionette.ItemView.extend({
