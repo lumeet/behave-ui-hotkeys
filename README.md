@@ -137,3 +137,4 @@ To run tests run either `npm test` or `grunt test`, former is an alias for the l
 - 0.0.4 - Clean up readme, cleaned up code
 - 0.0.5 - Added `attachToDocument` functionality
 - 0.0.6 - Moved from `keypress` to `keydown` event
+- 0.0.7 - Moved from `keypress` to `keydown` event for `document` eventListener

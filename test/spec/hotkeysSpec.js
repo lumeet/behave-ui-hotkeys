@@ -99,7 +99,7 @@ describe('Hotkeys Behavior', function() {
             expect(this.view.trigger).toHaveBeenCalledWith('hotkey:ctrl:cmd:s');
         });
 
-        it('will call a view method if one was specified in the hash, and pass the in the event',
+        it('will call a view method if one was specified in the hash, and pass in the event',
                 function() {
 
             spyOn(this.view, 'save');

@@ -33,7 +33,7 @@ Hotkeys = Marionette.Behavior.extend({
     },
     onAttach: function() {
         if (this.options.attachToDocument) {
-            $(document).on('keypress', this._processHotkeys.bind(this));
+            $(document).on('keydown', this._processHotkeys.bind(this));
         }
 
         // make non-focusable elements focusable
@@ -44,21 +44,13 @@ Hotkeys = Marionette.Behavior.extend({
         }
     },
     _processHotkeys: function(e) {
-        var data = {
-            code: e.which,
-            cmd: e.metaKey,
-            ctrl: e.ctrlKey,
-            alt: e.altKey,
-            shift: e.shiftKey
-        };
-
         _.chain(this.hotkeys)
             .filter(function(hk) {
-                return data.code === hk.code &&
-                            data.cmd === hk.cmd &&
-                            data.ctrl === hk.ctrl &&
-                            data.alt === hk.alt &&
-                            data.shift === hk.shift;
+                return e.which === hk.code &&
+                            e.metaKey === hk.cmd &&
+                            e.ctrlKey === hk.ctrl &&
+                            e.altKey === hk.alt &&
+                            e.shiftKey === hk.shift;
             }.bind(this))
             .each(function(hk) {
                 this.view.trigger('hotkey:' + hk.hotkey);
@@ -106,7 +98,7 @@ Hotkeys = Marionette.Behavior.extend({
     },
     onBeforeDestroy: function() {
         if (this.options.attachToDocument) {
-            $(document).off('keypress', this._processHotkeys.bind(this));
+            $(document).off('keydown', this._processHotkeys.bind(this));
         }
     }
 });
