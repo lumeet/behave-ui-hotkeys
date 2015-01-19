@@ -16,7 +16,7 @@ Hotkeys = Marionette.Behavior.extend({
     events: function() {
         var events = {};
         if (!this.options.attachToDocument) {
-            events = { 'keypress': '_processHotkeys' };
+            events = { 'keydown': '_processHotkeys' };
         }
         return events;
     },

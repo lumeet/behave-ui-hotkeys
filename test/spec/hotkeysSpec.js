@@ -71,7 +71,7 @@ describe('Hotkeys Behavior', function() {
         });
     });
 
-    it('has a `_processHotkeys` method that is called on it\'s view\'s keypress event',
+    it('has a `_processHotkeys` method that is called on it\'s view\'s keydown event',
             function() {
 
         expect(behavior._processHotkeys).toBeDefined();
