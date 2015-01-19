@@ -1,6 +1,6 @@
 module.exports = {
     src: {
-        files: ['src/**/*.js'],
+        files: ['behave-ui-hotkeys.js'],
         tasks: ['test']
     },
     test: {

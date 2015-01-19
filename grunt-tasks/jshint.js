@@ -3,5 +3,5 @@ module.exports = {
         node: true
     },
     test: ['test/spec/**/*.js'],
-    src: ['src/**/*.js']
+    src: ['behave-ui-hotkeys.js']
 };
