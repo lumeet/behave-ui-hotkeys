@@ -54,7 +54,7 @@
             }
 
             // make non-focusable elements focusable
-            if (!/(input|textarea)/.test(this.view.el.tag.toLowerCase())) {
+            if (!/(input|textarea)/.test(this.view.el.tagName.toLowerCase())) {
                 this.view.$el
                     .attr('tabindex', 0)
                     .css('outline', '0px solid transparent');
