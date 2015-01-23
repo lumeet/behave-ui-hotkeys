@@ -48,13 +48,13 @@
             this.hotkeys = [];
             _(this.options.hotkeys).each(this._buildHotkeyCache.bind(this));
         },
-        onAttach: function() {
+        onRender: function() {
             if (this.options.attachToDocument) {
                 $(document).on('keydown', this._processHotkeys.bind(this));
             }
 
             // make non-focusable elements focusable
-            if (!/(input|textarea)/.test(this.view.el.tagName.toLowerCase())) {
+            if (!/(input|textarea|select)/.test(this.view.el.tagName.toLowerCase())) {
                 this.view.$el
                     .attr('tabindex', 0)
                     .css('outline', '0px solid transparent');
