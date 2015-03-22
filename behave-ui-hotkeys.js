@@ -133,7 +133,7 @@
         "backspace" : 8,
         "tab"       : 9,
         "enter"     : 10,
-        "return"    : 13,
+        "return"    : 10,
         "pause"     : 19,
         "esc"       : 27,
         "space"     : 32,
