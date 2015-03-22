@@ -1,6 +1,6 @@
 {
   "name": "behave-ui-hotkeys",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A hotkeys marionette behavior",
   "main": "src/behave-ui-hotkeys.js",
   "scripts": {

@@ -141,3 +141,4 @@ To run tests run either `npm test` or `grunt test`, former is an alias for the l
 - 0.0.8 - Fixed incorrect call to `tag` attribute on view el, should be `tagName`
 - 0.0.9 - Changed from `onAttach` to `onRender` for attaching event handlers
 - 0.0.10 - Removed duplicate dependencies
+- 0.0.11 - Changed return keycode from `13` to `10`
